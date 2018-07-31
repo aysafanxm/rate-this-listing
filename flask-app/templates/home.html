@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html>
+<title>Rate-This-Listing App</title>
+<body>
+
+<form action = "/userreview" method="POST">
+
+<p> Property Type :
+<select name="property_type">
+<option value="0" selected>Select: </option>
+<option name="property_type_apartment" value="1">Apartment </option>
+<option name="property_type_bed_breakfast" value="1">Bed and Breakfast </option>
+<option name="property_type_condominium" value="1">Condo </option>
+<option name="property_type_dorm" value="1">Dorm </option>
+<option name="property_type_hostel" value="1">Hostel </option>
+<option name="property_type_house" value="1">House </option>
+<option name="property_type_loft" value="1">Loft </option>
+<option name="property_type_townhouse" value="1">Townhouse </option>
+</select></p>
+
+<p> Number of Bedrooms :
+<select name="bedrooms">
+<option value="0" selected>0 </option>
+<option value="1" >1 </option>
+<option value="2">2 </option>
+<option value="3">3 </option>
+<option value="4">4 </option>
+<option value="5">5 </option>
+<option value="6">6 </option>
+<option value="7">7 </option>
+<option value="8">8 </option>
+<option value="9">9 </option>
+</select></p>
+    
+<p> Number of Bathrooms :
+<select name="bathrooms">
+<option value="0" selected>0 </option>
+<option value="1">1 </option>
+<option value="2">2 </option>
+<option value="3">3 </option>
+<option value="4">4 </option>
+<option value="5">5 </option>
+<option value="6">6 </option>
+<option value="7">7 </option>
+<option value="8">8 </option>
+<option value="9">9 </option>
+</select></p>
+    
+<p> Number of Beds :
+<select name="beds">
+<option value="0" selected>0 </option>
+<option value="1" >1 </option>
+<option value="2">2 </option>
+<option value="3">3 </option>
+<option value="4">4 </option>
+<option value="5">5 </option>
+<option value="6">6 </option>
+<option value="7">7 </option>
+<option value="8">8 </option>
+<option value="9">9 </option>
+</select></p>
+
+<fieldset>
+    <legend>Amenities of the Property</legend>
+
+    <div>
+        <input type="checkbox" id="amenities_airconditioning" name="amenities_airconditioning"
+               value="1" checked />
+        <label for="1">Air Conditioning</label>
+    </div>
+
+    <div>
+        <input type="checkbox" id="amenities_bathtub" name="amenities_bathtub"
+               value="1" />
+        <label for="1">Bathtub</label>
+    </div>
+
+    <div>
+        <input type="checkbox" id="amenities_breakfast" name="amenities_breakfast"
+               value="1" />
+        <label for="1">Breakfast</label>
+    </div>
+    
+    <div>
+        <input type="checkbox" id="amenities_cabletv" name="amenities_cabletv"
+               value="1" />
+        <label for="1">Cable TV</label>
+    </div>
+    
+    <div>
+        <input type="checkbox" id="amenities_coffeemaker" name="amenities_coffeemaker"
+               value="1" />
+        <label for="1">Coffee Maker</label>
+    </div>
+    
+    <div>
+        <input type="checkbox" id="amenities_cookingbasics" name="amenities_cookingbasics"
+               value="1" />
+        <label for="1">Cooking Basics</label>
+    </div>
+    
+    <div>
+        <input type="checkbox" id="amenities_dishwasher" name="amenities_dishwasher"
+               value="1" />
+        <label for="1">Dishwasher</label>
+    </div>
+    
+    <div>
+        <input type="checkbox" id="amenities_dryer" name="amenities_dryer"
+               value="1" />
+        <label for="1">Dryer</label>
+    </div>
+    
+    <div>
+        <input type="checkbox" id="amenities_elevator" name="amenities_elevator"
+               value="1" />
+        <label for="1">Elevator</label>
+    </div>
+    
+    <div>
+        <input type="checkbox" id="amenities_essentials" name="amenities_essentials"
+               value="1" />
+        <label for="1">Essentials</label>
+    </div>
+    
+    <div>
+        <input type="checkbox" id="amenities_extrapillowsandblankets" name="amenities_extrapillowsandblankets"
+               value="1" />
+        <label for="1">Extra Pillows and Plankets</label>
+    </div>
+    
+    <div>
+        <input type="checkbox" id="amenities_familykidfriendly" name="amenities_familykidfriendly"
+               value="1" />
+        <label for="1">Family and Kids Friendly</label>
+    </div>
+    
+    <div>
+        <input type="checkbox" id="amenities_freestreetparking" name="amenities_freestreetparking"
+               value="1" />
+        <label for="1">Free Street Parking</label>
+    </div>
+    
+    <div>
+        <input type="checkbox" id="amenities_gym" name="amenities_gym"
+               value="1" />
+        <label for="1">Gym</label>
+    </div>
+    
+    <div>
+        <input type="checkbox" id="amenities_heating" name="amenities_heating"
+               value="1" />
+        <label for="1">Heating</label>
+    </div>
+    
+    <div>
+        <input type="checkbox" id="amenities_internet" name="amenities_internet"
+               value="1" />
+        <label for="1">Internet</label>
+    </div>
+    
+    <div>
+        <input type="checkbox" id="amenities_kitchen" name="amenities_kitchen"
+               value="1" />
+        <label for="1">Kitchen</label>
+    </div>
+    
+    <div>
+        <input type="checkbox" id="amenities_lockonbedroomdoor" name="amenities_lockonbedroomdoor"
+               value="1" />
+        <label for="1">Lock on Bedroom Door</label>
+    </div>
+    
+    <div>
+        <input type="checkbox" id="amenities_petsallowed" name="amenities_petsallowed"
+               value="1" />
+        <label for="1">Pets Allowed</label>
+    </div>
+    
+    <div>
+        <input type="checkbox" id="amenities_pool" name="amenities_pool"
+               value="1" />
+        <label for="1">Pool</label>
+    </div>
+    
+    <div>
+        <input type="checkbox" id="amenities_privateentrance" name="amenities_privateentrance"
+               value="1" />
+        <label for="1">Private Entrance</label>
+    </div>
+    
+    <div>
+        <input type="checkbox" id="amenities_selfcheckin" name="amenities_selfcheckin"
+               value="1" />
+        <label for="1">Self Checkin</label>
+    </div>
+    
+    <div>
+        <input type="checkbox" id="amenities_smokingallowed" name="amenities_smokingallowed"
+               value="1" />
+        <label for="1">Smoking All Allowed</label>
+    </div>
+    
+    <div>
+        <input type="checkbox" id="amenities_tv" name="amenities_tv"
+               value="1" />
+        <label for="1">TV</label>
+    </div>
+    
+    <div>
+        <input type="checkbox" id="amenities_washer" name="amenities_washer"
+               value="1" />
+        <label for="1">Washer</label>
+    </div>
+    
+    <div>
+        <input type="checkbox" id="amenities_wheelchairaccessible" name="amenities_wheelchairaccessible"
+               value="1" />
+        <label for="1">Wheelchair Accessible</label>
+    </div>
+    
+    <div>
+        <input type="checkbox" id="amenities_wifi" name="amenities_wifi"
+               value="1" />
+        <label for="1">Wifi</label>
+    </div>
+
+</fieldset>
+    
+<p> Cleaning Fees: <input name="dest" type ="number" value="0" /> </p>
+
+<p> Bed Type :   
+<select name="bed_type">
+<option value="0" selected>Select: </option>
+<option name="bed_type_couch" value="1">Couch </option>
+<option name="bed_type_futon" value="1">Futon </option>
+<option name="bed_type_pull_out_sofa" value="1">Pull Out Sofa </option>
+<option name="bed_type_real_bed" value="1">Real Bed </option>
+</select></p>
+
+<p> Room Type :   
+<select name="roomtype">
+<option value="0" selected>Select: </option>
+<option name="room_type_entire_home_apt" value="1">Entire Home </option>
+<option name="room_type_private_room" value="1">Private Room </option>
+<option name="room_type_shared_room" value="1">Shared Room </option>
+</select></p>
+
+
+<p> Neighbourhood :    
+  <select name="neighbourhood">
+    <option value="0" selected>Select:</option>
+    <option name="neighbourhood_cleansed_bayview" value="1">Bayview</option>
+    <option name="neighbourhood_cleansed_bernal_heights" value="1">Bernal Heights</option>
+    <option name="neighbourhood_cleansed_castro_upper_market" value="1">Castro Upper Market</option>
+    <option name="neighbourhood_cleansed_chinatown" value="1">Chinatown</option>
+    <option name="neighbourhood_cleansed_crocker_amazon" value="1">Crocker Amazon</option>
+    <option name="neighbourhood_cleansed_diamond_heights" value="1">Diamond Heights</option>
+    <option name="neighbourhood_cleansed_downtown_civic_center" value="1">Downtown Civic Centre</option>
+    <option name="neighbourhood_cleansed_excelsior" value="1">Excelsior</option>
+    <option name="neighbourhood_cleansed_financial_district" value="1">Financial District</option>
+    <option name="neighbourhood_cleansed_glen_park" value="1">Glen Park</option>
+    <option name="neighbourhood_cleansed_golden_gate_park" value="1">Golden Gate Park</option>
+    <option name="neighbourhood_cleansed_haight_ashbury" value="1">Haight Ashbury</option>
+    <option name="neighbourhood_cleansed_inner_richmond" value="1">Inner Richmond</option>
+    <option name="neighbourhood_cleansed_lakeshore" value="1">Lakeshore</option>
+    <option name="neighbourhood_cleansed_marina" value="1">Marina</option>
+    <option name="neighbourhood_cleansed_mission" value="1">Mission</option>
+    <option name="neighbourhood_cleansed_nob_hill" value="1">Nob Hill</option>
+    <option name="neighbourhood_cleansed_noe_valley" value="1">Noe Valley</option>
+    <option name="neighbourhood_cleansed_north_beach" value="1">North Beach</option>
+    <option name="neighbourhood_cleansed_ocean_view" value="1">Ocean View</option>
+    <option name="neighbourhood_cleansed_outer_mission" value="1">Outer Mission</option>
+    <option name="neighbourhood_cleansed_outer_richmond" value="1">Outer Richmond</option>
+    <option name="neighbourhood_cleansed_outer_sunset" value="1">Outer Sunset</option>
+    <option name="neighbourhood_cleansed_pacific_heights" value="1">Pacific Heights</option>
+    <option name="neighbourhood_cleansed_potrero_hill" value="1">Potrero Hill</option>
+    <option name="neighbourhood_cleansed_russian_hill" value="1">Russian Hill</option>
+    <option name="neighbourhood_cleansed_seacliff" value="1">Seacliff</option>
+    <option name="neighbourhood_cleansed_south_of_market" value="1">South of Market</option>
+    <option name="neighbourhood_cleansed_visitacion_valley" value="1">Visitacion Valley</option>
+    <option name="neighbourhood_cleansed_western_addition" value="1">Western Addition</option>
+    </select>
+</p> 
+
+<p> Cancellation Policy :   
+<select name="cancellation_policy">
+<option value="0" selected>Select: </option>
+<option name="cancellation_policy_flexible" value="1">Flexible </option>
+<option name="cancellation_policy_moderate" value="1">Moderate </option>
+<option name="cancellation_policy_strict" value="1">Strict </option>
+<option name="cancellation_policy_super_strict_30" value="1">Strict 30 </option>
+<option name="cancellation_policy_super_strict_60" value="1">Strict 60 </option>
+</select></p>
+    
+<p> Host Response Time :   
+<select name="cancellation_policy">
+<option value="0" selected>Select: </option>
+<option name="host_response_time_a_few_days_or_more" value="1">A Few Days or More </option>
+<option name="host_response_time_within_a_day" value="1">Within a Day </option>
+<option name="host_response_time_within_a_few_hours" value="1">Within a Few Hours </option>
+<option name="host_response_time_within_an_hour" value="1">Within an Hour </option>
+</select></p>
+
+<p> <input type ="submit" value="submit" /> </p>
+
+</form>
+</body>
+</html>

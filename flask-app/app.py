@@ -1,9 +1,14 @@
 from flask import Flask, request, render_template
 from waitress import serve
+from sklearn.metrics import mean_squared_error, r2_score
 import json
 import pickle
 import numpy as np
 import pandas as pd
+import vecstack
+import xgboost as xgb
+import dill as pickle
+
 
 app = Flask(__name__)
 
@@ -23,6 +28,7 @@ def init_form_keys():
         with open(fname, 'rb') as f:
             d[k] = json.loads(f.read())
     return d
+
 
 def init_column_names():
     num_cols = pd.read_csv('./data/numeric_columns.csv')
@@ -51,7 +57,7 @@ def parse_form(form):
     for cname in ALL_COLS:
         if cname not in res_dict.keys():
             res_dict[cname] = 0.
-    return pd.DataFrame(res_dict, index=[0])
+    return pd.DataFrame(res_dict, index=[0], dtype=float)
 
 
 def get_col_value(colname, input_df, stats):
@@ -71,6 +77,7 @@ def normalize_numeric(df):
         mmax = NSTATS.loc['max', c]
         outdf[c] = (df[c] - 1. * mmin) / (mmax - mmin)
     return outdf
+
 
 def reformulate_input(inp):
     num = pd.DataFrame(columns=NCOLS)
@@ -92,6 +99,12 @@ ALL_COLS = list(NCOLS) + list(CCOLS) + list(ACOLS)
 NSTATS, CSTATS, ASTATS = init_col_stats()
 
 
+with open('./data/comb_vecstack_stack.pkl', 'rb') as f:
+    MODEL_STACK = pickle.load(f)
+
+with open('./data/comb_vecstack_clf.pkl', 'rb') as f:
+    MODEL_CLF = pickle.load(f)
+
 @app.route('/')
 def home():
     return render_template('home.html')
@@ -104,7 +117,8 @@ def user_review():
         # print inp
 
         reformed_inp = reformulate_input(inp)
-        print reformed_inp
+        
+        result = MODEL_CLF.predict(MODEL_STACK.transform(reformed_inp))
 
         return render_template('result.html', prediction=result)
 

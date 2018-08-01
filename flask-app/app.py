@@ -12,7 +12,7 @@ def home():
 @app.route('/userreview',methods=['POST','GET'])
 def user_review():
     if request.method=='POST':
-        esult=request.form
+        result=request.form
         property_type_apartment = result['property_type_apartment']
         property_type_apartment = result['property_type_bed_breakfast']
         property_type_apartment = result['property_type_condominium']

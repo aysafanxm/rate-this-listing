@@ -100,7 +100,7 @@ def user_review():
 
         
         #Prepare the feature vector for prediction
-        pkl_file = open('cat', 'rb')
+        pkl_file = open('comb_vecstack_stack.pkl', 'rb')
         index_dict = pickle.load(pkl_file)
         new_vector = np.zeros(len(index_dict))
         

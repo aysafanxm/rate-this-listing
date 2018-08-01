@@ -54,6 +54,38 @@ def parse_form(form):
     return pd.DataFrame(res_dict, index=[0])
 
 
+def get_col_value(colname, input_df, stats):
+        res = None
+        if colname in input_df.columns:
+            res = input_df[colname]
+        else:
+            res = stats.loc['50%', colname]
+        return res
+
+
+def normalize_numeric(df):
+    outdf = pd.DataFrame(columns=df.columns)
+
+    for c in df.columns:
+        mmin = NSTATS.loc['min', c]
+        mmax = NSTATS.loc['max', c]
+        outdf[c] = (df[c] - 1. * mmin) / (mmax - mmin)
+    return outdf
+
+def reformulate_input(inp):
+    num = pd.DataFrame(columns=NCOLS)
+    cat = pd.DataFrame(columns=CCOLS)
+    amen = pd.DataFrame(columns=ACOLS)
+    for c in NCOLS:
+        num[c] = get_col_value(c, inp, NSTATS)
+    num = normalize_numeric(num)
+    for c in CCOLS:
+        cat[c] = get_col_value(c, inp, CSTATS)
+    for c in ACOLS:
+        amen[c] = get_col_value(c, inp, ASTATS)
+    return pd.concat([num, cat, amen], axis=1)
+
+
 FORM_KEYS = init_form_keys()
 NCOLS, CCOLS, ACOLS = init_column_names()
 ALL_COLS = list(NCOLS) + list(CCOLS) + list(ACOLS)
@@ -68,8 +100,11 @@ def home():
 @app.route('/userreview', methods=['POST','GET'])
 def user_review():
     if request.method == 'POST':
-        result = parse_form(request.form)
-        print result
+        inp = parse_form(request.form)
+        # print inp
+
+        reformed_inp = reformulate_input(inp)
+        print reformed_inp
 
         return render_template('result.html', prediction=result)
 

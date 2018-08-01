@@ -41,35 +41,38 @@ def init_col_stats():
     return num_stats, cat_stats, amen_stats
 
 
+def parse_form(form):
+    res_dict = {}
+    for k, v in form.items():
+        if k in ALL_COLS:
+            res_dict[k] = v
+        elif v in ALL_COLS:
+            res_dict[v] = 1.
+    for cname in ALL_COLS:
+        if cname not in res_dict.keys():
+            res_dict[cname] = 0.
+    return pd.DataFrame(res_dict, index=[0])
+
+
 FORM_KEYS = init_form_keys()
 NCOLS, CCOLS, ACOLS = init_column_names()
+ALL_COLS = list(NCOLS) + list(CCOLS) + list(ACOLS)
 NSTATS, CSTATS, ASTATS = init_col_stats()
+
 
 @app.route('/')
 def home():
     return render_template('home.html')
 
+
 @app.route('/userreview', methods=['POST','GET'])
 def user_review():
-    if request.method=='POST':
-        result=request.form
-        # Log the result
-        res_dict = {}
-        for r in result:
-            for k, vals in FORM_KEYS.items():
-                for v in vals:
-                    if v == result[r]:
-                        print 'setting 1.'
-                        res_dict[v] = 1.
-                    else:
-                        res_dict[v] = 0.
-
-            for k, v in res_dict.items():
-                if 0. != v:
-                    print k, v
+    if request.method == 'POST':
+        result = parse_form(request.form)
+        print result
 
         return render_template('result.html', prediction=result)
-    
+
 
 if __name__ == '__main__':
     app.debug = True

@@ -99,52 +99,8 @@ def user_review():
         host_response_time_within_an_hour = result['host_response_time_within_an_hour']
 
         
-        #Prepare the feature vector for prediction
-        pkl_file = open('comb_vecstack_stack.pkl', 'rb')
-        index_dict = pickle.load(pkl_file)
-        new_vector = np.zeros(len(index_dict))
-        
-        try:
-            new_vector[index_dict['property_type_apartment'+str(result['property_type_apartment'])]] = 1
-        except:
-            pass
-        
-        try:
-            new_vector[index_dict['property_type_bed_breakfast'+str(result['property_type_bed_breakfast'])]] = 1
-        except:
-            pass
-        
-        try:
-            new_vector[index_dict['property_type_condominium'+str(result['property_type_condominium'])]] = 1
-        except:
-            pass
-        
-        
-        try:
-            new_vector[index_dict['property_type_dorm'+str(result['property_type_dorm'])]] = 1
-        except:
-            pass
-        
-        try:
-            new_vector[index_dict['property_type_hostel'+str(result['property_type_hostel'])]] = 1
-        except:
-            pass
- 
-        try:
-            new_vector[index_dict['property_type_house'+str(result['property_type_house'])]] = 1
-        except:
-            pass
-
-        try:
-            new_vector[index_dict['property_type_loft'+str(result['property_type_loft'])]] = 1
-        except:
-            pass
-
-
-        try:
-            new_vector[index_dict['property_type_townhouse'+str(result['property_type_townhouse'])]] = 1
-        except:
-            pass
+        #init_column_names
+        #init_col_stats
 
         
         pkl_file = open('./data/comb_vecstack_clf.pkl', 'rb')

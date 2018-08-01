@@ -7,18 +7,18 @@ app = Flask(__name__)
 
 @app.route('/')
 def home():
-	return render_template('home.html')
+    return render_template('home.html')
 
 @app.route('/userreview',methods=['POST','GET'])
 def user_review():
     if request.method=='POST':
-        result=request.form
-		property_type_apartment = result['property_type_apartment']
+        esult=request.form
+        property_type_apartment = result['property_type_apartment']
         property_type_apartment = result['property_type_bed_breakfast']
-		property_type_apartment = result['property_type_condominium']
-		property_type_apartment = result['property_type_dorm']
-		property_type_apartment = result['property_type_hostel']
-		property_type_apartment = result['property_type_house']
+        property_type_apartment = result['property_type_condominium']
+        property_type_apartment = result['property_type_dorm']
+        property_type_apartment = result['property_type_hostel']
+        property_type_apartment = result['property_type_house']
         property_type_apartment = result['property_type_loft']
         property_type_apartment = result['property_type_townhouse']
         bedrooms  = result['bedrooms']
@@ -98,9 +98,8 @@ def user_review():
         host_response_time_within_a_few_hours = result['host_response_time_within_a_few_hours']
         host_response_time_within_an_hour = result['host_response_time_within_an_hour']
 
-
         
-		#Prepare the feature vector for prediction
+        #Prepare the feature vector for prediction
         pkl_file = open('cat', 'rb')
         index_dict = pickle.load(pkl_file)
         new_vector = np.zeros(len(index_dict))
@@ -156,5 +155,5 @@ def user_review():
 
     
 if __name__ == '__main__':
-	app.debug = True
-	app.run(host='0.0.0.0')
+    app.debug = True
+    app.run(host='0.0.0.0')

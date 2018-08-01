@@ -42,8 +42,6 @@ def init_col_stats():
 
 
 FORM_KEYS = init_form_keys()
-print FORM_KEYS
-
 NCOLS, CCOLS, ACOLS = init_column_names()
 NSTATS, CSTATS, ASTATS = init_col_stats()
 
@@ -56,8 +54,19 @@ def user_review():
     if request.method=='POST':
         result=request.form
         # Log the result
+        res_dict = {}
         for r in result:
-            print r
+            for k, vals in FORM_KEYS.items():
+                for v in vals:
+                    if v == result[r]:
+                        print 'setting 1.'
+                        res_dict[v] = 1.
+                    else:
+                        res_dict[v] = 0.
+
+            for k, v in res_dict.items():
+                if 0. != v:
+                    print k, v
 
         return render_template('result.html', prediction=result)
     

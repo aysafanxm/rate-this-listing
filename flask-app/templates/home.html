@@ -5,6 +5,41 @@
 
 <form action = "/userreview" method="POST">
 
+<p> Neighbourhood :    
+  <select name="neighbourhood">
+    <option name="neighbourhood_cleansed_bayview" value="neighbourhood_cleansed_bayview" selected>Bayview</option>
+    <option name="neighbourhood_cleansed_bernal_heights" value="neighbourhood_cleansed_bernal_heights">Bernal Heights</option>
+    <option name="neighbourhood_cleansed_castro_upper_market" value="neighbourhood_cleansed_castro_upper_market">Castro Upper Market</option>
+    <option name="neighbourhood_cleansed_chinatown" value="neighbourhood_cleansed_chinatown">Chinatown</option>
+    <option name="neighbourhood_cleansed_crocker_amazon" value="neighbourhood_cleansed_crocker_amazon">Crocker Amazon</option>
+    <option name="neighbourhood_cleansed_diamond_heights" value="neighbourhood_cleansed_diamond_heights">Diamond Heights</option>
+    <option name="neighbourhood_cleansed_downtown_civic_center" value="neighbourhood_cleansed_downtown_civic_center">Downtown Civic Centre</option>
+    <option name="neighbourhood_cleansed_excelsior" value="neighbourhood_cleansed_excelsior">Excelsior</option>
+    <option name="neighbourhood_cleansed_financial_district" value="neighbourhood_cleansed_financial_district">Financial District</option>
+    <option name="neighbourhood_cleansed_glen_park" value="neighbourhood_cleansed_glen_park">Glen Park</option>
+    <option name="neighbourhood_cleansed_golden_gate_park" value="neighbourhood_cleansed_golden_gate_park">Golden Gate Park</option>
+    <option name="neighbourhood_cleansed_haight_ashbury" value="neighbourhood_cleansed_haight_ashbury">Haight Ashbury</option>
+    <option name="neighbourhood_cleansed_inner_richmond" value="neighbourhood_cleansed_inner_richmond">Inner Richmond</option>
+    <option name="neighbourhood_cleansed_lakeshore" value="neighbourhood_cleansed_lakeshore">Lakeshore</option>
+    <option name="neighbourhood_cleansed_marina" value="neighbourhood_cleansed_marina">Marina</option>
+    <option name="neighbourhood_cleansed_mission" value="neighbourhood_cleansed_mission">Mission</option>
+    <option name="neighbourhood_cleansed_nob_hill" value="neighbourhood_cleansed_nob_hill">Nob Hill</option>
+    <option name="neighbourhood_cleansed_noe_valley" value="neighbourhood_cleansed_noe_valley">Noe Valley</option>
+    <option name="neighbourhood_cleansed_north_beach" value="neighbourhood_cleansed_north_beach">North Beach</option>
+    <option name="neighbourhood_cleansed_ocean_view" value="neighbourhood_cleansed_ocean_view">Ocean View</option>
+    <option name="neighbourhood_cleansed_outer_mission" value="neighbourhood_cleansed_outer_mission">Outer Mission</option>
+    <option name="neighbourhood_cleansed_outer_richmond" value="neighbourhood_cleansed_outer_richmond">Outer Richmond</option>
+    <option name="neighbourhood_cleansed_outer_sunset" value="neighbourhood_cleansed_outer_sunset">Outer Sunset</option>
+    <option name="neighbourhood_cleansed_pacific_heights" value="neighbourhood_cleansed_pacific_heights">Pacific Heights</option>
+    <option name="neighbourhood_cleansed_potrero_hill" value="neighbourhood_cleansed_potrero_hill">Potrero Hill</option>
+    <option name="neighbourhood_cleansed_russian_hill" value="neighbourhood_cleansed_russian_hill">Russian Hill</option>
+    <option name="neighbourhood_cleansed_seacliff" value="neighbourhood_cleansed_seacliff">Seacliff</option>
+    <option name="neighbourhood_cleansed_south_of_market" value="neighbourhood_cleansed_south_of_market">South of Market</option>
+    <option name="neighbourhood_cleansed_visitacion_valley" value="neighbourhood_cleansed_visitacion_valley">Visitacion Valley</option>
+    <option name="neighbourhood_cleansed_western_addition" value="neighbourhood_cleansed_western_addition">Western Addition</option>
+    </select>
+</p> 
+
 <p> Property Type :
 <select name="property_type">
 <option name="property_type_apartment" value="property_type_apartment" selected>Apartment </option>
@@ -15,6 +50,13 @@
 <option name="property_type_house" value="property_type_house">House </option>
 <option name="property_type_loft" value="property_type_loft">Loft </option>
 <option name="property_type_townhouse" value="property_type_townhouse">Townhouse </option>
+</select></p>
+
+<p> Room Type :   
+<select name="room_type">
+<option name="room_type_entire_home_apt" value="room_type_entire_home_apt" selected>Entire Home </option>
+<option name="room_type_private_room" value="room_type_private_room">Private Room </option>
+<option name="room_type_shared_room" value="room_type_shared_room">Shared Room </option>
 </select></p>
 
 <p> Number of Bedrooms :
@@ -55,6 +97,34 @@
 <option value="8">8 </option>
 <option value="9">9 </option>
 </select></p>
+
+<p> Bed Type :   
+<select name="bed_type">
+<option name="bed_type_couch" value="bed_type_couch" selected>Couch </option>
+<option name="bed_type_futon" value="bed_type_futon">Futon </option>
+<option name="bed_type_pull_out_sofa" value="bed_type_pull_out_sofa">Pull Out Sofa </option>
+<option name="bed_type_real_bed" value="bed_type_real_bed">Real Bed </option>
+</select></p>
+    
+<p> Cleaning Fee: <input name="cleaning_fee" type ="number" value="50.00" /> </p>
+
+<p> Cancellation Policy :   
+<select name="cancellation_policy">
+<option name="cancellation_policy_flexible" value="cancellation_policy_flexible" selected>Flexible </option>
+<option name="cancellation_policy_moderate" value="cancellation_policy_moderate">Moderate </option>
+<option name="cancellation_policy_strict" value="cancellation_policy_strict">Strict </option>
+<option name="cancellation_policy_super_strict_30" value="cancellation_policy_super_strict_30">Strict 30 </option>
+<option name="cancellation_policy_super_strict_60" value="cancellation_policy_super_strict_60">Strict 60 </option>
+</select></p>
+    
+<p> Host Response Time :   
+    <select name="host_response_time">
+        <option name="host_response_time_a_few_days_or_more" value="host_response_time_a_few_days_or_more" selected>A Few Days or More </option>
+        <option name="host_response_time_within_a_day" value="host_response_time_within_a_day">Within a Day </option>
+        <option name="host_response_time_within_a_few_hours" value="host_response_time_within_a_few_hours">Within a Few Hours </option>
+        <option name="host_response_time_within_an_hour" value="host_response_time_within_an_hour">Within an Hour </option>
+    </select>
+</p>
 
 <fieldset>
     <legend>Amenities of the Property</legend>
@@ -222,77 +292,6 @@
     </div>
 
 </fieldset>
-    
-<p> Cleaning Fee: <input name="cleaning_fee" type ="number" value="50.00" /> </p>
-
-<p> Bed Type :   
-<select name="bed_type">
-<option name="bed_type_couch" value="bed_type_couch" selected>Couch </option>
-<option name="bed_type_futon" value="bed_type_futon">Futon </option>
-<option name="bed_type_pull_out_sofa" value="bed_type_pull_out_sofa">Pull Out Sofa </option>
-<option name="bed_type_real_bed" value="bed_type_real_bed">Real Bed </option>
-</select></p>
-
-<p> Room Type :   
-<select name="room_type">
-<option name="room_type_entire_home_apt" value="room_type_entire_home_apt" selected>Entire Home </option>
-<option name="room_type_private_room" value="room_type_private_room">Private Room </option>
-<option name="room_type_shared_room" value="room_type_shared_room">Shared Room </option>
-</select></p>
-
-
-<p> Neighbourhood :    
-  <select name="neighbourhood">
-    <option name="neighbourhood_cleansed_bayview" value="neighbourhood_cleansed_bayview" selected>Bayview</option>
-    <option name="neighbourhood_cleansed_bernal_heights" value="neighbourhood_cleansed_bernal_heights">Bernal Heights</option>
-    <option name="neighbourhood_cleansed_castro_upper_market" value="neighbourhood_cleansed_castro_upper_market">Castro Upper Market</option>
-    <option name="neighbourhood_cleansed_chinatown" value="neighbourhood_cleansed_chinatown">Chinatown</option>
-    <option name="neighbourhood_cleansed_crocker_amazon" value="neighbourhood_cleansed_crocker_amazon">Crocker Amazon</option>
-    <option name="neighbourhood_cleansed_diamond_heights" value="neighbourhood_cleansed_diamond_heights">Diamond Heights</option>
-    <option name="neighbourhood_cleansed_downtown_civic_center" value="neighbourhood_cleansed_downtown_civic_center">Downtown Civic Centre</option>
-    <option name="neighbourhood_cleansed_excelsior" value="neighbourhood_cleansed_excelsior">Excelsior</option>
-    <option name="neighbourhood_cleansed_financial_district" value="neighbourhood_cleansed_financial_district">Financial District</option>
-    <option name="neighbourhood_cleansed_glen_park" value="neighbourhood_cleansed_glen_park">Glen Park</option>
-    <option name="neighbourhood_cleansed_golden_gate_park" value="neighbourhood_cleansed_golden_gate_park">Golden Gate Park</option>
-    <option name="neighbourhood_cleansed_haight_ashbury" value="neighbourhood_cleansed_haight_ashbury">Haight Ashbury</option>
-    <option name="neighbourhood_cleansed_inner_richmond" value="neighbourhood_cleansed_inner_richmond">Inner Richmond</option>
-    <option name="neighbourhood_cleansed_lakeshore" value="neighbourhood_cleansed_lakeshore">Lakeshore</option>
-    <option name="neighbourhood_cleansed_marina" value="neighbourhood_cleansed_marina">Marina</option>
-    <option name="neighbourhood_cleansed_mission" value="neighbourhood_cleansed_mission">Mission</option>
-    <option name="neighbourhood_cleansed_nob_hill" value="neighbourhood_cleansed_nob_hill">Nob Hill</option>
-    <option name="neighbourhood_cleansed_noe_valley" value="neighbourhood_cleansed_noe_valley">Noe Valley</option>
-    <option name="neighbourhood_cleansed_north_beach" value="neighbourhood_cleansed_north_beach">North Beach</option>
-    <option name="neighbourhood_cleansed_ocean_view" value="neighbourhood_cleansed_ocean_view">Ocean View</option>
-    <option name="neighbourhood_cleansed_outer_mission" value="neighbourhood_cleansed_outer_mission">Outer Mission</option>
-    <option name="neighbourhood_cleansed_outer_richmond" value="neighbourhood_cleansed_outer_richmond">Outer Richmond</option>
-    <option name="neighbourhood_cleansed_outer_sunset" value="neighbourhood_cleansed_outer_sunset">Outer Sunset</option>
-    <option name="neighbourhood_cleansed_pacific_heights" value="neighbourhood_cleansed_pacific_heights">Pacific Heights</option>
-    <option name="neighbourhood_cleansed_potrero_hill" value="neighbourhood_cleansed_potrero_hill">Potrero Hill</option>
-    <option name="neighbourhood_cleansed_russian_hill" value="neighbourhood_cleansed_russian_hill">Russian Hill</option>
-    <option name="neighbourhood_cleansed_seacliff" value="neighbourhood_cleansed_seacliff">Seacliff</option>
-    <option name="neighbourhood_cleansed_south_of_market" value="neighbourhood_cleansed_south_of_market">South of Market</option>
-    <option name="neighbourhood_cleansed_visitacion_valley" value="neighbourhood_cleansed_visitacion_valley">Visitacion Valley</option>
-    <option name="neighbourhood_cleansed_western_addition" value="neighbourhood_cleansed_western_addition">Western Addition</option>
-    </select>
-</p> 
-
-<p> Cancellation Policy :   
-<select name="cancellation_policy">
-<option name="cancellation_policy_flexible" value="cancellation_policy_flexible" selected>Flexible </option>
-<option name="cancellation_policy_moderate" value="cancellation_policy_moderate">Moderate </option>
-<option name="cancellation_policy_strict" value="cancellation_policy_strict">Strict </option>
-<option name="cancellation_policy_super_strict_30" value="cancellation_policy_super_strict_30">Strict 30 </option>
-<option name="cancellation_policy_super_strict_60" value="cancellation_policy_super_strict_60">Strict 60 </option>
-</select></p>
-    
-<p> Host Response Time :   
-    <select name="host_response_time">
-        <option name="host_response_time_a_few_days_or_more" value="host_response_time_a_few_days_or_more" selected>A Few Days or More </option>
-        <option name="host_response_time_within_a_day" value="host_response_time_within_a_day">Within a Day </option>
-        <option name="host_response_time_within_a_few_hours" value="host_response_time_within_a_few_hours">Within a Few Hours </option>
-        <option name="host_response_time_within_an_hour" value="host_response_time_within_an_hour">Within an Hour </option>
-    </select>
-</p>
 
 
 <p> <input type ="submit" value="submit" /> </p>

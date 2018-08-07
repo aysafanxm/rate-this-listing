@@ -120,7 +120,19 @@ def user_review():
         
         result = MODEL_CLF.predict(MODEL_STACK.transform(reformed_inp))
 
-        return render_template('result.html', prediction=result)
+        if 80 < result < 90:
+            prediction = "Your listing needs some improvement before it's released to the market. \n Don\'t worry! If you are in a rush, you can still post the listing. However, it's highly recommended to make some changes or improvement on your listing before you rent it out. Take a look of the suggested list below and start renovation!"
+        elif 90 < result < 95:
+            prediction = "Your listing looks good - some improvement can make it better but it's up to you. <br />\n Most renters will be satisfied with your listing, and you can simply start renting it out. If you want, here is a suggested list with some amenities that renters highly demand, and you may add some of them to make your place even more competitive in the market! "
+        else:
+            prediction = "Congratulations, your listing is highly competitive!<br />\n Although there are some amenities renters would like to have, you are good to go!"
+
+        #feature = []
+        #for i in range(0, len(MODEL_CLF.feature_importances_)-1):
+            #feature.append(MODEL_CLF.feature_importances_[i])
+        #return feature
+
+        return render_template('result.html', prediction = prediction) #feature = feature)
 
 
 if __name__ == '__main__':
